@@ -1,8 +1,10 @@
 #include <iostream>
 
 //胡汉三添加sort 冒泡排序算法
+//优化冒泡排序
 void sort(int arr[], int size)
 {
+	bool flag = true;
 	int tmp = 0;
 	for (int i = 0; i < size - 1; i++)
 	{
@@ -13,8 +15,11 @@ void sort(int arr[], int size)
 				tmp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = tmp;
+				flag = false;
 			}
 		}
+		if(flag)
+			break;
 	}
 }
 int main()
